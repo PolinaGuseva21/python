@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+print('Data for task 1:')
+a = input()
+if a.isdigit():
+    a = int(a)
+else:
+    a = float(a)
+b = input()
+if b.isdigit():
+    b = int(b)
+else:
+    b = float(b)
+if b in [0, 0.0]:
+    chastone = Achastone = Zchastone = 'Incorrect!'
+else:
+    chastone = a/b
+    Achastone = abs(chastone)
+    Zchastone = a//b
+print(f'Сумма: {a+b}\nРазность: {a-b}\n\
+Произведение: {a*b}\nЧастное: {chastone}\n\
+Возведение А в степень В: {a ** b}\nЧастное по модулю: {Achastone}\n\
+Целочисленное деление: {Zchastone}')  #добавлены обратные слэши, чтоб вывод не был визуально громоздким
+
+print('Data for task 2:')
+print(f'Hello, {input()}')
+
+print('Data for task 3 (*):')
+print(input()[-2:][::-1])
+
+print('Data for task 4 (*):')
+import math
+print(f'S = {math.pi * (float(input()) ** 2)}') #можем преобразовать в вещественный тип, так как результат и так будет вещественным из-за pi
