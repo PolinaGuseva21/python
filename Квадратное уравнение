@@ -1,0 +1,52 @@
+import math
+
+print("Введите квадратное уравнение в формате ax^2 + bx + c = 0:")
+str = input()
+
+a = str[:str.find("x")]
+if (len(a) == 0):
+    a = 1
+elif (a == "-"):
+    a = -1
+else:
+    a = int(a)
+    
+    
+    
+b = str[str.find("x")+6:str.rfind("x")]
+znak = str[str.find("x")+4:str.find("x")+5]
+zn = 1
+if (znak == "-"):
+    zn = -1
+    
+if (len(b) == 0):
+    b = 1+zn
+else:
+    b = int(b)*zn
+
+
+
+c = str[str.rfind("x")+3:str.find("=")-1]
+znak = str[str.rfind("x")+2:str.rfind("x")+3]
+zn = 1
+if (znak == "-"):
+    zn = -1
+if (len(c) == 0):
+    c = 1*zn
+else:
+    c = int(c)*zn
+#print(f'a = {a}')
+#print(f'b = {b}')
+#print(f'c = {c}')
+D = b ** 2 - 4*a*c
+if (D == 0):
+    x = -b/(2*a)
+    print(f'x = {x}')
+elif (D > 0):
+    x1 = (-b + math.sqrt(D))/(2*a)
+    x2 = (-b - math.sqrt(D))/(2*a)
+    print(f'x1 = {x1}, x2 = {x2}')
+else:
+    x1 = (f'{-b/(2*a)} + {math.sqrt(-D)/(2*a)}i')
+    x2 = (f'{-b/(2*a)} - {math.sqrt(-D)/(2*a)}i')
+    print(f'x1 = {x1}, x2 = {x2}')
