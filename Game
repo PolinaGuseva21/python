@@ -6,16 +6,13 @@ x = y = 0
 while (i != "stop"):
     if (i == "left"):
         x-=1
-        print(f'({x};{y})')
     elif (i == "right"):
         x+=1
-        print(f'({x};{y})')
     elif (i == "up"):
         y+=1
-        print(f'({x};{y})')
     elif (i == "down"):
         y-=1
-        print(f'({x};{y})')
     else:
         print("Wrong comand!")
+    print(f'({x};{y})')
     i = input()
