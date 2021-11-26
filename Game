@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+# Сразу релизован бесконечный скрипт
+print("Enter the command (left, right, up, down) or stop-word (stop): ")
+i = input();
+x = y = 0
+while (i != "stop"):
+    if (i == "left"):
+        x-=1
+        print(f'({x};{y})')
+    elif (i == "right"):
+        x+=1
+        print(f'({x};{y})')
+    elif (i == "up"):
+        y+=1
+        print(f'({x};{y})')
+    elif (i == "down"):
+        y-=1
+        print(f'({x};{y})')
+    else:
+        print("Wrong comand!")
+    i = input()
