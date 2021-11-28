@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+print("Введите элементы списка через пробел:")
+inp = input()
+list = list(inp.split(' '))
+for el1 in range(len(list)-1):
+    el2 = el1 + 1
+    for l in range(el2, len(list)):
+        if (list[el1] > list[l]):
+            t = list[l]
+            list[l] = list[el1]
+            list[el1] = t
+print("Итог сортировки пузыркем:")
+print(list)
