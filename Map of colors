@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+from PIL import ImageColor
+list1 = ["red", "orange", "yellow", "green", "blue", "purple"]
+list2 = ["#ff0000", "#ff8c00", "#ffff00", "#00ff00", "#0000ff", "#800080"]
+map = {}
+for i in list1:
+    map[i] = ImageColor.getcolor(list2[list1.index(i)], "RGB")
+print(map.items())
