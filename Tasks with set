@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-a = {1 , 6, 7, 9, 3, 2, 0}
-b = {1, 6, 7, 8, 3, 4, 11}
+import random
+a = set()
+b = set()
+for i in range(5):
+    a.add(random.randint(0, 9))
+for i in range(5):
+    b.add(random.randint(0, 9))
+print(a)
+print(b)
 print("Пересечение двух множеств: ", a.intersection(b))
 print("Элементы входят в первое множество, во второе нет: ", a.difference(b))
 print("Элементы входят во второе множество, в первое нет: ", b.difference(a))
