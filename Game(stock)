@@ -15,7 +15,7 @@ while (str != "stop"):
         if (sum + int(rez[1]) > enough):
             print("Инвентарь будет переполнен, попробуйте что-то удалить!")
         else:
-            if (rez[0] in game_stock): #если ключ повторяется, то поменяем знаечние на новое
+            if (rez[0] in game_stock): #если ключ повторяется, то поменяем значение на новое
                 sum -= game_stock[rez[0]]
             game_stock[rez[0]] = int(rez[1])
             sum += int(rez[1])
