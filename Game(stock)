@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+print("Введите ограничение по весу инвентаря (г):")
+enough = int(input())
+print("Введите команду (add/delete), после чего введите пару, которую хотите добавить/ключ удаляемого элемента, или стоп-слово (stop):")
+str = input()
+game_stock = dict()
+sum = 0
+for i in game_stock.keys():
+    sum += game_stock[i]
+while (str != "stop"):
+    if str == "add":
+        print("Введите пару:")
+        el = input()
+        rez = el.split(" ")
+        if (sum + int(rez[1]) > enough):
+            print("Инвентарь будет переполнен, попробуйте что-то удалить!")
+        else:
+            if (rez[0] in game_stock): #если ключ повторяется, то поменяем знаечние на новое
+                sum -= game_stock[rez[0]]
+            game_stock[rez[0]] = int(rez[1])
+            sum += int(rez[1])
+        print("Текущий инвентарь:")
+        for i in game_stock:
+            print(f'{i}: {game_stock[i]}g')
+    elif (str == "delete"):
+        if not game_stock:
+            print("Инвентарь пуст, нечего удалять!")
+        else:
+            el = input()
+            sum -= game_stock[el]
+            del game_stock[el]
+        print("Текущий инвентарь:")
+        for i in game_stock:
+            print(f'{i}: {game_stock[i]}g')
+    else:
+        print("Неверная команда!")
+    str = input()
