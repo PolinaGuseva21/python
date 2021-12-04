@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+"""
+Если ряд начинается с двух единиц
+"""
+def fibonachi(num):
+    if num in [1, 2]:
+        return 1
+    return fibonachi(num - 1) + fibonachi(num - 2)
+    
+print(f'Ряд начинается с единиц (num = 10): {fibonachi(10)}')
+"""
+Если ряд начинается с нуля
+"""
+def fibonachii(num):
+    if num == 1:
+        return 0
+    if num in [2, 3]:
+        return 1
+    return fibonachii(num - 1) + fibonachii(num - 2)
+    
+print(f'Ряд начинается с нуля (num = 10): {fibonachii(10)}')
