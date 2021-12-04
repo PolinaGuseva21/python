@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+#file = open("input.txt", 'rt')
+f = lambda c, h, o: min(c//2, h//6, o)
+print(f(10, 32, 8))
