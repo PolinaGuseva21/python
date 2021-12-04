@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""
+Функция возвращает сумму введенных аругментов.
+Если все аргументы - числовые значения, то возвращает обычную сумму;
+если в наборе встречается хотя бы одна строка, то все аргументы записываются в одну строку.
+(все аргументы преобразовываются к строковому типу)
+"""
+def func(*args):
+    if (any(isinstance(n, str) for n in args)):
+        sum = ""
+        for n in args:
+            sum += str(n)
+    else:
+        sum = 0
+        for n in args:
+            sum += float(n)
+    return sum
+
+#прбные вызовы
+print("Sum: ",func())
+print("Sum: ",func(1, 3, 5))
+print("Sum: ",func(1, "lala", "!", 4))
+print("Sum: ",func(1.0, "lol"))
+print("Sum: ",func(1.0, 3.6))
+print("Sum: ",func("haha", "ops")
