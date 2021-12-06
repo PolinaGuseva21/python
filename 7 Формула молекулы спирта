@@ -15,7 +15,7 @@ def number_of_mol():
             except ValueError:
                 return None
     except FileNotFoundError:
-        print('File with data wasn\'t found!')
+        print('File with data isn\'t found!')
         return None
 
 
