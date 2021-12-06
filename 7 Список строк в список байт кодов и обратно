@@ -1,0 +1,59 @@
+#!/usr/bin/python3
+"""
+На английском языке работа с кодированием/декодированием мне показалась не наглядной,
+поэтому я написала еще две функции с ord() и chr(), где хотя бы байт код числом отображается
+"""
+
+def coding(list):
+    if not list:
+        print('List is empty!')
+    else:
+        final_list = []
+        for element in list:
+            final_list.append(element.encode('utf-8'))
+        return final_list
+
+
+def coding2(list):
+    if not list:
+        print('List is empty!')
+    else:
+        list_of_list = []
+        for element in list:
+            list_of_codes = []
+            for char in element:
+                list_of_codes.append(ord(char))
+            list_of_list.append(list_of_codes)
+        return list_of_list
+
+
+def decoding(list):
+    if not list:
+        print('List is empty!')
+    else:
+        final_list = []
+        for element in list:
+            final_list.append(element.decode())
+        return final_list
+
+
+def decoding2(list):
+    if not list:
+        print('List is empty!')
+    else:
+        list_of_list = []
+        for element in list:
+            str_of_codes = ""
+            for char in element:
+               str_of_codes += chr(char)
+            list_of_list.append(str_of_codes)
+        return list_of_list
+
+
+start_list = ['ho-ho-ho', 'merry', 'christmas', '!']
+print('Tasks with using .encode() and .decode():')
+print(f'List of bytes: {coding(start_list)}')
+print(f'List of strings: {decoding(coding(start_list))}\n')
+print('Tasks with using ord() and chr():')
+print(f'List of bytes: {coding2(start_list)}')
+print(f'List of strings: {decoding2(coding2(start_list))}')
