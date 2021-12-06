@@ -1,4 +1,31 @@
 #!/usr/bin/python3
-#file = open("input.txt", 'rt')
-f = lambda c, h, o: min(c//2, h//6, o)
-print(f(10, 32, 8))
+"""
+Написала две функции, потому что каждая выполняет принципиально разные задачи:
+чтение и запись.
+"""
+def number_of_mol():
+    try:
+        with open('input.txt', 'rt') as file:
+            text = file.read().split(' ')
+            if len(text) != 3:
+                print('Insufficient data to complete the task!')
+                return None # Возвращает None как сигнал о некорректной работе
+            try:
+                return min(int(text[0])//2, int(text[1])//6, int(text[2]))
+            except ValueError:
+                return None
+    except FileNotFoundError:
+        print('File with data wasn\'t found!')
+        return None
+
+
+def writting(num):
+    # файл создастся, если еще не существует, поэтому {try:  except:} пропущены
+    with open('output.txt', 'wt') as file:
+        if num is None:
+            print('Data error!')
+            return
+        file.write(f'Number of possible molecules: {num}')
+
+
+writting(number_of_mol())
