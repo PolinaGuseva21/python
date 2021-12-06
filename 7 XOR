@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+def coding(key):
+    try:
+        with open('text.txt', 'rt') as file:
+            list1 = file.read().split(' ')
+            final_str = ''
+            for element in list1:
+                for char in element:
+                    final_str += chr(ord(char)^key)
+                final_str += ' '
+            return final_str
+    except FileNotFoundError:
+        print('File isn\'t found')
+        return None
+
+
+def decoding(string, key):
+    if string is None:
+        return
+    list = string.split(' ')
+    final_str = ''
+    for element in list:
+        for char in element:
+            final_str += chr(ord(char) ^ key)
+        final_str += ' '
+    return final_str
+
+
+print(f'Enter key (int):')
+key = input()
+if key.isdigit():
+    key = int(key)
+print(f'Coding: {coding(key)}')
+print(f'Decoding: {decoding(coding(key), key)}')
