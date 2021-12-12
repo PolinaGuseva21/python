@@ -4,9 +4,13 @@
 чтение и запись.
 """
 def number_of_mol():
+    """
+    Функция считывает данные из файла input.txt и возвращает максимальное количество
+    молекул спирта, которые могут получится из данного набора атомов.
+    """
     try:
         with open('input.txt', 'rt') as file:
-            text = file.read().split(' ')
+            text=file.read().split(' ')
             if len(text) != 3:
                 print('Insufficient data to complete the task!')
                 return None # Возвращает None как сигнал о некорректной работе
@@ -20,6 +24,11 @@ def number_of_mol():
 
 
 def writting(num):
+    """
+    Функция записывает данные (максимальное количество молекул спирта, которые
+    могут получится из данного набора атомов) в файл output.txt.
+    num - количество молекул.
+    """
     # файл создастся, если еще не существует, поэтому {try:  except:} пропущены
     with open('output.txt', 'wt') as file:
         if num is None:
