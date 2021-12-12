@@ -1,13 +1,15 @@
 #!/usr/bin/python3
+"""
+Вводятся элементы списка через пробел.
+Программа сортирует пузырком список элементов.
+"""
 print("Введите элементы списка через пробел:")
 inp = input()
 list = list(inp.split(' '))
 for el1 in range(len(list)-1):
     el2 = el1 + 1
-    for l in range(el2, len(list)):
-        if (list[el1] > list[l]):
-            t = list[l]
-            list[l] = list[el1]
-            list[el1] = t
+    for after_el1 in range(el2, len(list)):
+        if (list[el1] > list[after_el1]):
+            list[el1],list[after_el1]=list[after_el1],list[el1]
 print("Итог сортировки пузыркем:")
 print(list)
