@@ -5,22 +5,31 @@
 """
 
 def coding(list):
+    """
+    Функция байтового кодирования элементов списка.
+    list - список с исходными элементами.
+    """
     if not list:
         print('List is empty!')
     else:
-        final_list = []
+        final_list=[]
         for element in list:
             final_list.append(element.encode('utf-8'))
         return final_list
 
 
 def coding2(list):
+    """
+    Функция байтового кодирования элементов списка с представлением
+    элементов в виде набора байт-кодов до 255.
+    list - список с исходными элементами.
+    """
     if not list:
         print('List is empty!')
     else:
-        list_of_list = []
+        list_of_list=[]
         for element in list:
-            list_of_codes = []
+            list_of_codes=[]
             for char in element:
                 list_of_codes.append(ord(char))
             list_of_list.append(list_of_codes)
@@ -28,24 +37,33 @@ def coding2(list):
 
 
 def decoding(list):
+    """
+    Функция байтового декодирования элементов списка.
+    list - список с исходными элементами.
+    """
     if not list:
         print('List is empty!')
     else:
-        final_list = []
+        final_list=[]
         for element in list:
             final_list.append(element.decode())
         return final_list
 
 
 def decoding2(list):
+    """
+    Функция байтового декодирования элементов списка из набора
+    байт-кодов до 255 в строки.
+    list - список с исходными элементами.
+    """
     if not list:
         print('List is empty!')
     else:
-        list_of_list = []
+        list_of_list=[]
         for element in list:
-            str_of_codes = ""
+            str_of_codes=""
             for char in element:
-               str_of_codes += chr(char)
+               str_of_codes+=chr(char)
             list_of_list.append(str_of_codes)
         return list_of_list
 
