@@ -1,37 +1,43 @@
 #!/usr/bin/python3
+"""
+Программа реализет небольшую игру в заполнение инвентаря.
+Вводится максимальная вместимость инвентаря, команда для дальнейших действий.
+При любом изменении инвентаря выводится список его содержимого.
+"""
+
 print("Введите ограничение по весу инвентаря (г):")
-enough = int(input())
+enough=int(input())
 print("Введите команду (add/delete), после чего введите пару, которую хотите добавить/ключ удаляемого элемента, или стоп-слово (stop):")
-str = input()
-game_stock = dict()
-sum = 0
+entered_command=input()
+game_stock=dict()
+sum_of_gram=0
 for i in game_stock.keys():
-    sum += game_stock[i]
-while (str != "stop"):
-    if str == "add":
+    sum_of_gram+=game_stock[i]
+while (entered_command != "stop"):
+    if entered_command == "add":
         print("Введите пару:")
-        el = input()
-        rez = el.split(" ")
-        if (sum + int(rez[1]) > enough):
+        name_weight=input()
+        rez=name_weight.split(" ")
+        if (sum_of_gram+int(rez[1]) > enough):
             print("Инвентарь будет переполнен, попробуйте что-то удалить!")
         else:
             if (rez[0] in game_stock): #если ключ повторяется, то поменяем значение на новое
-                sum -= game_stock[rez[0]]
-            game_stock[rez[0]] = int(rez[1])
-            sum += int(rez[1])
+                sum_of_gram-=game_stock[rez[0]]
+            game_stock[rez[0]]=int(rez[1])
+            sum_of_gram+=int(rez[1])
         print("Текущий инвентарь:")
         for i in game_stock:
             print(f'{i}: {game_stock[i]}g')
-    elif (str == "delete"):
+    elif (entered_command == "delete"):
         if not game_stock:
             print("Инвентарь пуст, нечего удалять!")
         else:
-            el = input()
-            sum -= game_stock[el]
-            del game_stock[el]
+            name_weight=input()
+            sum_of_gram-=game_stock[name_weight]
+            del game_stock[name_weight]
         print("Текущий инвентарь:")
         for i in game_stock:
             print(f'{i}: {game_stock[i]}g')
     else:
         print("Неверная команда!")
-    str = input()
+    entered_command=input()
