@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 def coding(key):
+    """
+    Функция реализует кодировку строки способом XOR.
+    key - ключ кодировки.
+    """
     try:
         with open('text.txt', 'rt') as file:
-            list1 = file.read().split(' ')
-            final_str = ''
+            list1=file.read().split(' ')
+            final_str=''
             for element in list1:
                 for char in element:
-                    final_str += chr(ord(char)^key)
-                final_str += ' '
+                    final_str+=chr(ord(char)^key)
+                final_str+=' '
             return final_str
     except FileNotFoundError:
         print('File isn\'t found')
@@ -15,20 +19,25 @@ def coding(key):
 
 
 def decoding(string, key):
+    """
+    Функция реализует декодировку строки способом XOR.
+    key - ключ кодировки.
+    string - закодированная строка
+    """
     if string is None:
         return
-    list = string.split(' ')
-    final_str = ''
+    list=string.split(' ')
+    final_str=''
     for element in list:
         for char in element:
-            final_str += chr(ord(char) ^ key)
-        final_str += ' '
+            final_str+=chr(ord(char) ^ key)
+        final_str+=' '
     return final_str
 
 
 print(f'Enter key (int):')
-key = input()
+key=input()
 if key.isdigit():
-    key = int(key)
+    key=int(key)
 print(f'Coding: {coding(key)}')
 print(f'Decoding: {decoding(coding(key), key)}')
