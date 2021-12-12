@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-# Сразу релизован бесконечный скрипт
+"""
+Реализовано перемещение по координатной плоскости.
+Вводится наименование команды, после каждого действия
+выводится результат работы программы.
+"""
 print("Enter the command (left, right, up, down) or stop-word (stop): ")
-i = input();
-x = y = 0
+i=input();
+x=y=0
 while (i != "stop"):
     if (i == "left"):
         x-=1
@@ -15,4 +19,4 @@ while (i != "stop"):
     else:
         print("Wrong comand!")
     print(f'({x};{y})')
-    i = input()
+    i=input()
