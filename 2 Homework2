@@ -1,24 +1,38 @@
 #!/usr/bin/python3
+"""
+Задание 1: на входе два числа (a и b),
+выводится их сумма, разность, произведение, частное,
+возведение a в степень b, частное по модулю,
+целочисленное деление.
+
+Задание 2: на входе строка (имя). Программа выводит приветствие
+с обращением по имени.
+
+Задание 3: на входе строка. Программа выводит два послених символа
+этой строки в обратном порядке.
+
+Задание 4: на входе радиус. Программа выводит площадь круга.
+"""
 print('Data for task 1:')
-a = input()
+a=input()
 if a.isdigit():
-    a = int(a)
+    a=int(a)
 else:
-    a = float(a)
-b = input()
+    a=float(a)
+b=input()
 if b.isdigit():
-    b = int(b)
+    b=int(b)
 else:
-    b = float(b)
+    b=float(b)
 if b in [0, 0.0]:
-    chastone = Achastone = Zchastone = 'Incorrect!'
+    chastone=Achastone=Zchastone='Incorrect!'
 else:
-    chastone = a/b
-    Achastone = abs(chastone)
-    Zchastone = a//b
+    chastone=a/b
+    Achastone=abs(chastone)
+    Zchastone=a//b
 print(f'Сумма: {a+b}\nРазность: {a-b}\n\
 Произведение: {a*b}\nЧастное: {chastone}\n\
-Возведение А в степень В: {a ** b}\nЧастное по модулю: {Achastone}\n\
+Возведение А в степень В: {a**b}\nЧастное по модулю: {Achastone}\n\
 Целочисленное деление: {Zchastone}')  #добавлены обратные слэши, чтоб вывод не был визуально громоздким
 
 print('Data for task 2:')
@@ -29,4 +43,4 @@ print(input()[-2:][::-1])
 
 print('Data for task 4 (*):')
 import math
-print(f'S = {math.pi * (float(input()) ** 2)}') #можем преобразовать в вещественный тип, так как результат и так будет вещественным из-за pi
+print(f'S = {math.pi * (float(input())**2)}') #можем преобразовать в вещественный тип, так как результат и так будет вещественным из-за pi
