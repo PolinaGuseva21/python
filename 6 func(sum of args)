@@ -7,13 +7,13 @@
 """
 def func(*args):
     if (any(isinstance(n, str) for n in args)):
-        sum = ""
+        sum=""
         for n in args:
-            sum += str(n)
+            sum+=str(n)
     else:
-        sum = 0
+        sum=0
         for n in args:
-            sum += float(n)
+            sum+=float(n)
     return sum
 
 #пробные вызовы
