@@ -1,0 +1,99 @@
+#!/usr/bin/python3
+class animals:
+    def __init__(self, sign_as_animal, behaviour_as_animal):
+        self.sign_as_animal = sign_as_animal
+        self.behaviour_as_animal = behaviour_as_animal
+
+    def sign(self):
+        print(f'I\'m an animal and I {self.sign_as_animal}')
+
+    def behaviour(self):
+        print(f'I can {self.behaviour_as_animal}!')
+
+
+class mammals(animals):
+    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals):
+        super().__init__(sign_as_animal, behaviour_as_animal)
+        self.sign_as_mammals = sign_as_mammals
+        self.behaviour_as_mammals = behaviour_as_mammals
+
+    def sign(self):
+        print('I\'m a mammal')
+
+    def behaviour(self):
+        print(f'I can {self.behaviour_as_mammals}!')
+
+
+class human(mammals):
+    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_human, behaviour_as_human):
+        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals)
+        self.sign_as_human = sign_as_human
+        self.behaviour_as_animal = behaviour_as_human
+
+    def sign(self):
+        print('I\'m a human')
+
+    def behaviour(self):
+        print(f'I can {self.behaviour_as_human}!')
+
+
+class cat(mammals):
+    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_cat, behaviour_as_cat):
+        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals)
+        self.sign_as_cat = sign_as_cat
+        self.behaviour_as_cat = behaviour_as_cat
+
+    def sign(self):
+        print('I\'m a cat')
+
+    def behaviour(self):
+        print(f'{self.behaviour_as_cat}!')
+
+
+class dog(mammals):
+    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_dog, behaviour_as_dog):
+        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals)
+        self.sign_as_dog = sign_as_dog
+        self.behaviour_as_dog = behaviour_as_dog
+
+    def sign(self):
+        print('I\'m a dog')
+
+    def behaviour(self):
+        print(f'{self.behaviour_as_dog}!')
+
+
+class Student(human):
+    def __init__(self, name, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_human, behaviour_as_human, number_of_homeworks):
+        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_human, behaviour_as_human)
+        self.number_of_homeworks = number_of_homeworks
+        self.name = name
+
+    def __eq__(self, other):
+        return f'{self.name}\'s number of homework == {other.name}\'s number of homework is {self.number_of_homeworks == other.number_of_homeworks}'
+
+    def __ne__(self, other):
+        return f'{self.name}\'s number of homework != {other.name}\'s number of homework is {self.number_of_homeworks != other.number_of_homeworks}'
+
+    def __lt__(self, other):
+        return f'{self.name}\'s number of homework < {other.name}\'s number of homework is {self.number_of_homeworks < other.number_of_homeworks}'
+
+    def __gt__(self, other):
+        return f'{self.name}\'s number of homework > {other.name}\'s number of homework is {self.number_of_homeworks > other.number_of_homeworks}'
+
+    def __le__(self, other):
+        return f'{self.name}\'s number of homework <= {other.name}\'s number of homework is {self.number_of_homeworks <= other.number_of_homeworks}'
+
+    def __ge__(self, other):
+        return f'{self.name}\'s number of homework >= {other.name}\'s number of homework is {self.number_of_homeworks >= other.number_of_homeworks}'
+
+
+
+Sasha = Student('Sasha', 'legs', 'breath', 'smart', 'think', 'brains', 'talk', 1)
+Dasha = Student('Dasha', 'legs', 'breath', 'smart', 'think', 'brains', 'talk', 20)
+print(Sasha.__eq__(Dasha))
+print(Sasha.__ne__(Dasha))
+print(Sasha.__lt__(Dasha))
+print(Sasha.__gt__(Dasha))
+print(Sasha.__le__(Dasha))
+print(Sasha.__ge__(Dasha))
