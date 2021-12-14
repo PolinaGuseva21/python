@@ -12,7 +12,8 @@ class animals:
 
 
 class mammals(animals):
-    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals):
+    def __init__(self, sign_as_animal, behaviour_as_animal,
+                 sign_as_mammals, behaviour_as_mammals):
         super().__init__(sign_as_animal, behaviour_as_animal)
         self.sign_as_mammals = sign_as_mammals
         self.behaviour_as_mammals = behaviour_as_mammals
@@ -25,10 +26,15 @@ class mammals(animals):
 
 
 class human(mammals):
-    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_human, behaviour_as_human):
-        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals)
+    def __init__(self, sign_as_animal, behaviour_as_animal,
+                 sign_as_mammals, behaviour_as_mammals,
+                 sign_as_human, behaviour_as_human):
+
+        super().__init__(sign_as_animal, behaviour_as_animal,
+                         sign_as_mammals, behaviour_as_mammals)
         self.sign_as_human = sign_as_human
         self.behaviour_as_animal = behaviour_as_human
+
 
     def sign(self):
         print('I\'m a human')
@@ -38,8 +44,11 @@ class human(mammals):
 
 
 class cat(mammals):
-    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_cat, behaviour_as_cat):
-        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals)
+    def __init__(self, sign_as_animal, behaviour_as_animal,
+                 sign_as_mammals, behaviour_as_mammals,
+                 sign_as_cat, behaviour_as_cat):
+        super().__init__(sign_as_animal, behaviour_as_animal,
+                         sign_as_mammals, behaviour_as_mammals)
         self.sign_as_cat = sign_as_cat
         self.behaviour_as_cat = behaviour_as_cat
 
@@ -51,8 +60,11 @@ class cat(mammals):
 
 
 class dog(mammals):
-    def __init__(self, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_dog, behaviour_as_dog):
-        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals)
+    def __init__(self, sign_as_animal, behaviour_as_animal,
+                 sign_as_mammals, behaviour_as_mammals,
+                 sign_as_dog, behaviour_as_dog):
+        super().__init__(sign_as_animal, behaviour_as_animal,
+                         sign_as_mammals, behaviour_as_mammals)
         self.sign_as_dog = sign_as_dog
         self.behaviour_as_dog = behaviour_as_dog
 
@@ -64,8 +76,12 @@ class dog(mammals):
 
 
 class Student(human):
-    def __init__(self, name, sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_human, behaviour_as_human, number_of_homeworks):
-        super().__init__(sign_as_animal, behaviour_as_animal, sign_as_mammals, behaviour_as_mammals, sign_as_human, behaviour_as_human)
+    def __init__(self, name, sign_as_animal, behaviour_as_animal,
+                 sign_as_mammals, behaviour_as_mammals,
+                 sign_as_human, behaviour_as_human, number_of_homeworks):
+        super().__init__(sign_as_animal, behaviour_as_animal,
+                         sign_as_mammals, behaviour_as_mammals,
+                         sign_as_human, behaviour_as_human)
         self.number_of_homeworks = number_of_homeworks
         self.name = name
 
