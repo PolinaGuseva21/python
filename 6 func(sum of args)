@@ -14,6 +14,8 @@ def func(*args):
         sum=0
         for n in args:
             sum+=float(n)
+    if len(args)==0:
+        return None
     return sum
 
 #пробные вызовы
