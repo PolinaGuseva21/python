@@ -1,0 +1,21 @@
+import lalala
+
+
+def test_func_no_ags():
+    assert lalala.func() is None
+
+
+def test_func_int_ags():
+    assert lalala.func(1, 3, 5) == 9
+
+
+def test_func_float_ags():
+    assert lalala.func(1.0, 3, 5.2) == 9.2
+
+
+def test_func_digits_and_str_args():
+    assert lalala.func(1, 2.0, "lala") == "12.0lala"
+
+
+def test_func_str_ags():
+    assert lalala.func("ho-ho-ho, ", "Merry ", "Christmas!") == "ho-ho-ho, Merry Christmas!"
